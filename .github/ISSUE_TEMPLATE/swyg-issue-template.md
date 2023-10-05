@@ -1,8 +1,8 @@
 ---
 name: SWYG Issue Template
 about: SWYG 4팀 이슈 템플릿
-title: ''
-labels: ''
+title: 'feat: 제목을 넣어주세요'
+labels: feat
 assignees: ''
 
 ---
