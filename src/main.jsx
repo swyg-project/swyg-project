@@ -14,6 +14,7 @@ import GiftTypeResult from "./pages/GiftTypeResult";
 import GiftReceived from "./pages/GiftReceived";
 import Redirect from "./pages/Redirect";
 import GiftLast from "./pages/GiftLast";
+import GiftPick from "./pages/GiftPick";
 
 const router = createBrowserRouter([
   {
@@ -28,6 +29,7 @@ const router = createBrowserRouter([
   { path: "/short/:id", element: <Redirect /> },
   { path: "/receiver", element: <GiftReceived /> },
   { path: "/last", element: <GiftLast /> },
+  { path: "/pick", element: <GiftPick /> },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(

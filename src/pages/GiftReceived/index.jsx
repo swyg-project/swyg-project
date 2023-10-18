@@ -5,12 +5,11 @@ import { useDispatch } from "react-redux";
 import { add } from "../../redux/slices/urlSlice";
 import ReceiverHome from "./components/ReceiverHome";
 import * as S from "./styled";
-import ReceiverPick from "./components/ReceiverPick";
 
 const GiftReceived = () => {
+  const navigate = useNavigate();
   const urlParams = new URLSearchParams(window.location.search);
   let urlInfo = {};
-  const [viewGift, setViewGift] = useState(false);
   const dispatch = useDispatch();
   const entries = urlParams.entries();
 
@@ -23,16 +22,12 @@ const GiftReceived = () => {
   }, [urlInfo]);
   return (
     <S.Container>
-      {!viewGift ? (
-        <S.Container>
-          <ReceiverHome />
-          <S.Button onClick={() => setViewGift(true)}>
-            친구가 고른 선물 리스트 보러가기
-          </S.Button>
-        </S.Container>
-      ) : (
-        <ReceiverPick />
-      )}
+      <S.Container>
+        <ReceiverHome />
+        <S.Button onClick={() => navigate("/pick")}>
+          친구가 고른 선물 리스트 보러가기
+        </S.Button>
+      </S.Container>
     </S.Container>
   );
 };

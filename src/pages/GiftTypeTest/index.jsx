@@ -1,6 +1,6 @@
 import Question from "./componenets/Question";
 import BackBtn from "./componenets/BackBtn";
-import Header from "./componenets/Header";
+import Header from "../../components/Header";
 import { useSelector } from "react-redux";
 import * as S from "./styled";
 const GiftTypeTest = () => {

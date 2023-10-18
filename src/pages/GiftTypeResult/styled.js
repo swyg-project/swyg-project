@@ -2,60 +2,68 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   margin: 0 auto;
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
+  // background-color: #484c99;
+  background-color: white;
+  overflow-y: auto;
+  // color: #ffffff;
+  color: black;
 `;
 
 export const TypeBox = styled.div`
   display: flex;
-  flex-wrap: wrap;
   flex-direction: column;
-
-  align-items: center;
-
+  justify-content: center;
+  width: 90%;
+  margin: 90px auto 50px;
   .title {
-    margin-bottom: 1rem;
+    text-align: center;
     font-weight: bold;
-    font-size: 1.3rem;
+    font-size: 20px;
   }
   .description {
-    width: 30rem;
-    font-size: 0.9rem;
-    line-height: 1.3rem;
+    text-align: center;
+    margin-top: 25px;
+    font-size: 15px;
+    line-height: 20px;
   }
 `;
 
 export const GiftBox = styled.div`
+  .text {
+    font-size: 20px;
+    margin-bottom: 30px;
+  }
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  margin-bottom: 1rem;
 `;
+
 export const GiftList = styled.div`
-  margin-top: 0.5rem;
   display: grid;
-
-  grid-template-columns: 10rem 10rem;
-  grid-template-rows: 3rem 3rem 3rem;
-  grid-column-gap: 1rem;
-  grid-row-gap: 1rem;
-
-  line-height: 3rem;
+  grid-template-columns: 187px 187px;
+  grid-template-rows: 111px 111px 111px;
+  grid-column-gap: 18px;
+  grid-row-gap: 30px;
+  margin-bottom: 50px;
 `;
 
 export const GiftItem = styled.div`
-  place-items: center;
-  background-color: var(--white-primary);
-  border-radius: 1rem;
   text-align: center;
+  place-items: center;
 
-  font-size: 0.7rem;
-  white-space: pre-line;
-  word-break: break-all;
+  .gift-name {
+    font-size: 17px;
+  }
+  .gift-image {
+    object-fit: cover;
+    border-radius: 10px;
+    width: 100%;
+    height: 100%;
+  }
 `;
 
 export const ResultBtnContainer = styled.div`
@@ -63,9 +71,15 @@ export const ResultBtnContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
+  margin-top: 22px;
   button {
-    width: 10rem;
-    margin: 0.2rem;
+    width: 232px;
+    height: 52px;
+    /* UI Properties */
+    background: #c194c0 0% 0% no-repeat padding-box;
+    border-radius: 10px;
+    opacity: 1;
+
+    margin-bottom: 22px;
   }
 `;

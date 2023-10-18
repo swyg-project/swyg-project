@@ -17,8 +17,10 @@ function BackBtn() {
 
   return (
     <S.BackBtn>
-      <button onClick={handleBackBtn}>&lt;</button>
-      {pageNumber + 1}/12
+      <div className="back-btn" onClick={handleBackBtn}></div>
+
+      <div className="page-number">{pageNumber + 1}/12</div>
+      <div className="empty-box"></div>
     </S.BackBtn>
   );
 }

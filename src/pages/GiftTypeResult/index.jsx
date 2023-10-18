@@ -1,8 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import { resultList } from "../../data/resultList";
 import { useNavigate, useParams } from "react-router-dom";
+import Header from "../../components/Header";
 import * as S from "./styled";
-
 function GiftTestResult() {
   const navigate = useNavigate();
   const mbti = useParams().id;
@@ -29,10 +29,18 @@ function GiftTestResult() {
         <div className="description">{giftList[0]?.description}</div>
       </S.TypeBox>
       <S.GiftBox>
-        어울리는 선물
+        <div className="text">어울리는 선물</div>
         <S.GiftList>
           {giftList[0].gift.map((gift) => (
-            <S.GiftItem key={gift}>{gift}</S.GiftItem>
+            <S.GiftItem>
+              <img
+                className="gift-image"
+                src={`${import.meta.env.VITE_PUBLIC_URL}/images/gift/${
+                  gift.image
+                }.jpg`}
+              />
+              <div className="gift-name"> {gift.name}</div>
+            </S.GiftItem>
           ))}
         </S.GiftList>
       </S.GiftBox>
