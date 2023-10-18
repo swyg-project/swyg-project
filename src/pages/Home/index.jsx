@@ -15,7 +15,7 @@ const Home = () => {
                 <S.IntersactionLink to={"/list"}>
                     선물 리스트<br></br>만들러 가기
                 </S.IntersactionLink>
-                <S.IntersactionLink>
+                <S.IntersactionLink to={"/test"}>
                     유형 테스트로<br></br>선물 추천받기
                 </S.IntersactionLink>
             </S.Intersaction>
