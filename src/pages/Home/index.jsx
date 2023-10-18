@@ -12,12 +12,12 @@ const Home = () => {
                 </div>
             </S.Banner>
             <S.Intersaction>
-                <button>
+                <S.IntersactionLink to={"/list"}>
                     선물 리스트<br></br>만들러 가기
-                </button>
-                <button>
+                </S.IntersactionLink>
+                <S.IntersactionLink>
                     유형 테스트로<br></br>선물 추천받기
-                </button>
+                </S.IntersactionLink>
             </S.Intersaction>
             <S.Share>
                 <button>링크 공유하기</button>

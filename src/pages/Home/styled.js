@@ -1,11 +1,14 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const Container = styled.div`
     display: flex;
     flex-direction: column;
     align-items: stretch;
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    
+    height: calc(100% - var(--header-height));
+    /* padding-top: var(--header-height); */
 `;
 
 export const Banner = styled.div`
@@ -42,16 +45,6 @@ export const Intersaction = styled.div`
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: 1fr;
-
-    /* FIXME: 와이어 프레임 */
-    button {
-        width: 100%;
-        height: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-size: 1.5rem;
-    }
 `;
 
 export const Share = styled.div`
@@ -65,4 +58,14 @@ export const Share = styled.div`
         padding: 6px 24px;
         font-size: 1.2rem;
     }
-`
+`;
+
+export const IntersactionLink = styled(Link)`
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    border: 1px solid black;
+`;
