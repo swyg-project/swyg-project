@@ -2,68 +2,91 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   margin: 0 auto;
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-`;
-
-export const Header = styled.div`
-  height: 5rem;
-  text-align: start;
-  margin-top: 1rem;
-  font-size: 2rem;
+  background-color: #484c99;
+  color: #ffffff;
 `;
 
 export const TestBox = styled.div`
-  width: 100%;
-  height: 70%;
+  flex: 1;
   display: flex;
   flex-direction: column;
+  margin: 0
   justify-content: center;
 `;
 
 export const Question = styled.div`
-  flex: 1;
+  padding: 0 30px;
+  font-size: 20px;
+  margin: 0 auto;
+  height: 279px;
   display: flex;
   align-items: center;
-  justify-content: center;
-  text-align: center;
-  font-size: 1.5rem;
-  line-height: 2rem;
 `;
 
 export const Answer = styled.div`
-  div {
-    text-align: center;
-    height: 5rem;
-
-    line-height: 5rem;
-
-    background-color: var(--white-primary);
-    border-radius: 0.7rem;
-    margin: 0 2rem 1.5rem;
+  .answer-btn {
+    margin: 0 auto 13px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 353px;
+    height: 111px;
+    border: 5px solid #9c76b0;
+    border-radius: 10px;
+    opacity: 1;
   }
 
-  div:hover {
-    background-color: gray;
+  .answer-btn:hover {
+    box-shadow: 0px 0px 6px #c194c0;
+    border: 5px solid #c194c0;
+    border-radius: 10px;
+    opacity: 1;
     cursor: pointer;
   }
 `;
 
 export const BackBtn = styled.div`
-  text-align: center;
+  width: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 64px;
 
-  margin-bottom: 1rem;
-  position: fixed;
-  bottom: 0;
-  left: 50%;
+  .back-btn {
+    overflow: hidden;
+    position: relative;
+    width: 58px;
+    height: 70px;
+  }
 
-  button {
+  .back-btn::after {
+    box-shadow: 0px 0px 6px #c194c0; /* 테두리에만 그림자 적용 */
+
     position: absolute;
-    left: -500%;
+    content: "";
+    top: 25px;
+    left: 44px;
+    width: 20px; /* 사이즈 */
+    height: 20px; /* 사이즈 */
+    border-top: 4px solid #c194c0; /* 선 두께 */
+    border-right: 4px solid #c194c0; /* 선 두께 */
+    transform: rotate(225deg); /* 각도 */
+  }
+
+  .page-number {
+    text-align: center;
+    letter-spacing: 0px;
+    color: #c892be;
+    text-shadow: 0px 0px 6px #c892be;
+    opacity: 1;
+  }
+  .empty-box {
+    width: 58px;
+    height: 70px;
   }
 `;

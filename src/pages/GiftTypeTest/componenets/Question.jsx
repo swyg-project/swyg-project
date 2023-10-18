@@ -37,7 +37,7 @@ function Question() {
       </S.Question>
       <S.Answer>
         <div
-          className="answerA"
+          className="answer-btn"
           onClick={() => handleClickAnswer(questionList[pageNumber].a[0].type)}
         >
           {pageNumber >= 0 && pageNumber < 12
@@ -45,7 +45,7 @@ function Question() {
             : questionList[0].a[0].text}
         </div>
         <div
-          className="answerB"
+          className="answer-btn"
           onClick={() => handleClickAnswer(questionList[pageNumber].a[1].type)}
         >
           {pageNumber >= 0 && pageNumber < 12
