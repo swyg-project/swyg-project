@@ -27,3 +27,6 @@ dist-ssr
 *.sw?
 
 /swyg-project
+
+# environment variables
+.env

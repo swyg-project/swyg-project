@@ -2,7 +2,6 @@ import * as S from "./styled";
 import { useNavigate } from "react-router-dom";
 
 const Home = () => {
-  const navigate = useNavigate();
   return (
     <S.Container>
       <S.Banner>
@@ -14,12 +13,12 @@ const Home = () => {
         </div>
       </S.Banner>
       <S.Intersaction>
-        <button>
+        <S.IntersactionLink to={"/list"}>
           선물 리스트<br></br>만들러 가기
-        </button>
-        <button onClick={() => navigate("/test")}>
+        </S.IntersactionLink>
+        <S.IntersactionLink to={"/test"}>
           유형 테스트로<br></br>선물 추천받기
-        </button>
+        </S.IntersactionLink>
       </S.Intersaction>
       <S.Share>
         <button>링크 공유하기</button>

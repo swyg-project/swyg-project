@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import { Provider } from "react-redux";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
 import { Provider } from "react-redux";
@@ -7,7 +8,9 @@ import { store } from "./redux/constants";
 
 import GlobalStyles from "./style/global";
 import theme from "./style/theme";
+import { store } from "./redux/app/store";
 
+import App from "./App";
 import Home from "./pages/Home";
 import Test from "./pages/GiftTypeTest";
 import GiftTypeResult from "./pages/GiftTypeResult";
@@ -15,11 +18,41 @@ import GiftReceived from "./pages/GiftReceived";
 import Redirect from "./pages/Redirect";
 import GiftLast from "./pages/GiftLast";
 import GiftPick from "./pages/GiftPick";
+import GiftListCreate from "./pages/GiftListCreate";
+import Cart from "./pages/Cart";
+import Letter from "./pages/Letter";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Home />,
+    element: <App />,
+    children: [
+      {
+        index: true,
+        element: <Home />,
+      },
+      {
+        path: "/list",
+        children: [
+          {
+            index: true,
+            element: <GiftListCreate />,
+          },
+          {
+            path: ":category",
+            element: <GiftListCreate />,
+          },
+        ],
+      },
+      {
+        path: "/cart",
+        element: <Cart />,
+      },
+      {
+        path: "/letter",
+        element: <Letter />,
+      },
+    ],
   },
   {
     path: "/test",
@@ -33,10 +66,10 @@ const router = createBrowserRouter([
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <ThemeProvider theme={theme}>
-    <GlobalStyles />
-    <Provider store={store}>
+  <Provider store={store}>
+    <ThemeProvider theme={theme}>
+      <GlobalStyles />
       <RouterProvider router={router} />
-    </Provider>
-  </ThemeProvider>
+    </ThemeProvider>
+  </Provider>
 );
