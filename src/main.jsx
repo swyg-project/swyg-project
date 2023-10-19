@@ -3,6 +3,8 @@ import ReactDOM from "react-dom/client";
 import { Provider } from "react-redux";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
+import { Provider } from "react-redux";
+import { store } from "./redux/constants";
 
 import GlobalStyles from "./style/global";
 import theme from "./style/theme";
@@ -21,53 +23,53 @@ import Cart from "./pages/Cart";
 import Letter from "./pages/Letter";
 
 const router = createBrowserRouter([
-    {
-        path: "/",
-        element: <App />,
+  {
+    path: "/",
+    element: <App />,
+    children: [
+      {
+        index: true,
+        element: <Home />,
+      },
+      {
+        path: "/list",
         children: [
-            {
-                index: true,
-                element: <Home />,
-            },
-            {
-                path: "/list",
-                children: [
-                    {
-                        index: true,
-                        element: <GiftListCreate />,
-                    },
-                    {
-                        path: ":category",
-                        element: <GiftListCreate />,
-                    },
-                ],
-            },
-            {
-                path: "/cart",
-                element: <Cart />,
-            },
-            {
-                path: "/letter",
-                element: <Letter />,
-            },
+          {
+            index: true,
+            element: <GiftListCreate />,
+          },
+          {
+            path: ":category",
+            element: <GiftListCreate />,
+          },
         ],
-    },
-    {
-        path: "/test",
-        element: <Test />,
-    },
-    { path: "/result/:id", element: <GiftTypeResult /> },
-    { path: "/short/:id", element: <Redirect /> },
-    { path: "/receiver", element: <GiftReceived /> },
-    { path: "/last", element: <GiftLast /> },
-    { path: "/pick", element: <GiftPick /> },
+      },
+      {
+        path: "/cart",
+        element: <Cart />,
+      },
+      {
+        path: "/letter",
+        element: <Letter />,
+      },
+    ],
+  },
+  {
+    path: "/test",
+    element: <Test />,
+  },
+  { path: "/result/:id", element: <GiftTypeResult /> },
+  { path: "/short/:id", element: <Redirect /> },
+  { path: "/receiver", element: <GiftReceived /> },
+  { path: "/last", element: <GiftLast /> },
+  { path: "/pick", element: <GiftPick /> },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-    <Provider store={store}>
-        <ThemeProvider theme={theme}>
-            <GlobalStyles />
-            <RouterProvider router={router} />
-        </ThemeProvider>
-    </Provider>
+  <Provider store={store}>
+    <ThemeProvider theme={theme}>
+      <GlobalStyles />
+      <RouterProvider router={router} />
+    </ThemeProvider>
+  </Provider>
 );
