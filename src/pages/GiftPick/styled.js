@@ -57,8 +57,9 @@ export const ProductList = styled.div`
 export const ProductBox = styled.div``;
 
 export const LetterPaper = styled.div`
-  width: 24.1rem;
-  min-height: 18.5rem;
+  width: 22rem;
+  min-height: 18rem;
+  height: 100%;
 
   position: relative;
 
@@ -70,19 +71,18 @@ export const LetterPaper = styled.div`
 
   @media screen and ${theme.media.tablet} {
     width: 30em;
-    min-height: 25rem;
   }
 `;
 
 export const LetterWrap = styled.div`
   margin-top: 3rem;
+  
 }
 `;
 export const LetterUnderlined = styled.div`
   width: 80%;
   height: 100%;
   overflow-y: auto;
-
   margin: 0 auto;
   background: repeating-linear-gradient(
     transparent,
