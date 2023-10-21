@@ -3,8 +3,6 @@ import ReactDOM from "react-dom/client";
 import { Provider } from "react-redux";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
-import { Provider } from "react-redux";
-import { store } from "./redux/constants";
 
 import GlobalStyles from "./style/global";
 import theme from "./style/theme";
