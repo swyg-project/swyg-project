@@ -101,7 +101,9 @@ async function shortenUrl(originUrl) {
 
       const encodedValue = encodeBase62(uniqueValue);
       console.log("encodedValue:", encodedValue);
-      const encodedUrl = `http://localhost:5173/short/${encodedValue}`;
+      const encodedUrl = `${
+        import.meta.env.VITE_PUBLIC_URL
+      }short/${encodedValue}`;
 
       // // firebase에 넣기
       const col = collection(db, "url");

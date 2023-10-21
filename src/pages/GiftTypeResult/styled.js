@@ -1,68 +1,98 @@
 import styled from "styled-components";
-
+import theme from "../../style/theme";
 export const Container = styled.div`
-  margin: 0 auto;
-  width: 100%;
-  height: 100vh;
+  color: var(--black-primary);
+  height: 100%;
   display: flex;
   flex-direction: column;
-  // background-color: #484c99;
-  background-color: white;
-  overflow-y: auto;
-  // color: #ffffff;
-  color: black;
+  @media screen and ${theme.media.tablet} {
+    font-size: 1.2rem;
+  }
 `;
 
 export const TypeBox = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 90%;
-  margin: 90px auto 50px;
+  width: 80%;
+  margin: 5.6rem auto 3.1rem;
   .title {
     text-align: center;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 1.3rem;
   }
   .description {
+    margin: 1.5rem auto 0;
     text-align: center;
-    margin-top: 25px;
-    font-size: 15px;
-    line-height: 20px;
+    line-height: 1.4rem;
+  }
+
+  @media screen and ${theme.media.tablet} {
+    .description {
+      width: 80%;
+    }
+    .title {
+      font-size: 1.5rem;
+    }
   }
 `;
 
 export const GiftBox = styled.div`
   .text {
-    font-size: 20px;
-    margin-bottom: 30px;
+    align-self: center;
+    margin-left: -16rem; /* 원하는 만큼 왼쪽으로 이동시킵니다. */
+    margin-bottom: 0.8rem;
+    
+    @media screen and ${theme.media.tablet} {
+      margin-top:1rem;
+      margin-left: -23rem;
+    }
   }
   display: flex;
   flex-direction: column;
   align-items: center;
+  }
 `;
-
 export const GiftList = styled.div`
   display: grid;
-  grid-template-columns: 187px 187px;
-  grid-template-rows: 111px 111px 111px;
-  grid-column-gap: 18px;
-  grid-row-gap: 30px;
-  margin-bottom: 50px;
-`;
+  grid-template-columns: 10.5rem 10.5rem;
+  grid-template-rows: ${(props) => `repeat(${props.$columnLength}, 7rem)`};
+  grid-column-gap: 1.2rem;
+  grid-row-gap: 4rem;
+  margin-bottom: 4rem;
 
+  @media screen and ${theme.media.tablet} {
+    grid-template-columns: 15rem 15rem;
+    grid-template-rows: ${(props) => `repeat(${props.$columnLength}, 10rem)`};
+    grid-column-gap: 1.2rem;
+    grid-row-gap: 4rem;
+    margin-bottom: 4rem;
+  }
+`;
 export const GiftItem = styled.div`
   text-align: center;
   place-items: center;
+  display: flex;
+  flex-direction: column;
+
 
   .gift-name {
-    font-size: 17px;
+    margin-top:0.5rem;
+
   }
   .gift-image {
-    object-fit: cover;
+    background: var(--white-primary) 0% 0% no-repeat padding-box;
+    box-shadow: 0px 0px 6px var(--pale-lavender-color);
+    border: 5px solid var(--pale-lavender-color);
     border-radius: 10px;
+    opacity: 1;
+    object-fit: cover;
     width: 100%;
     height: 100%;
+  }
+
+
+
   }
 `;
 
@@ -71,15 +101,34 @@ export const ResultBtnContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 22px;
-  button {
-    width: 232px;
-    height: 52px;
-    /* UI Properties */
-    background: #c194c0 0% 0% no-repeat padding-box;
-    border-radius: 10px;
-    opacity: 1;
+  margin-top: 1.5rem;
 
+  button {
+    font-family: "GmarketSansMedium";
+    font-weight: bold;
+    width: 14.5rem;
+    height: 3.25rem;
+
+    background: var(--white-primary) 0% 0% no-repeat padding-box;
+    border-radius: 10px;
+    border: none;
+    opacity: 1;
+    box-shadow: 0px 4px 0px #9c76b0;
     margin-bottom: 22px;
+    font-size: 1.1rem;
+    color: var(--navy-color);
+  }
+
+  button:hover {
+    cursor: pointer;
+  }
+
+  @media screen and ${theme.media.tablet} {
+    margin-top: 2rem;
+    button {
+      width: 20rem;
+      height: 4rem;
+      font-size: 1.3rem;
+    }
   }
 `;

@@ -22,9 +22,16 @@ import Cart from "./pages/Cart";
 import Letter from "./pages/Letter";
 
 const router = createBrowserRouter([
-    {
-        path: "/",
-        element: <App />,
+  {
+    path: "/",
+    element: <App />,
+    children: [
+      {
+        index: true,
+        element: <Home />,
+      },
+      {
+        path: "/list",
         children: [
             {
                 index: true,
@@ -62,23 +69,33 @@ const router = createBrowserRouter([
                 ],
             },
         ],
-    },
-    {
-        path: "/test",
-        element: <Test />,
-    },
-    { path: "/result/:id", element: <GiftTypeResult /> },
-    { path: "/short/:id", element: <Redirect /> },
-    { path: "/receiver", element: <GiftReceived /> },
-    { path: "/last", element: <GiftLast /> },
-    { path: "/pick", element: <GiftPick /> },
+      },
+      {
+        path: "/cart",
+        element: <Cart />,
+      },
+      {
+        path: "/letter",
+        element: <Letter />,
+      },
+    ],
+  },
+  {
+    path: "/test",
+    element: <Test />,
+  },
+  { path: "/result/:id", element: <GiftTypeResult /> },
+  { path: "/short/:id", element: <Redirect /> },
+  { path: "/receiver", element: <GiftReceived /> },
+  { path: "/last", element: <GiftLast /> },
+  { path: "/pick", element: <GiftPick /> },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-    <Provider store={store}>
-        <ThemeProvider theme={theme}>
-            <GlobalStyles />
-            <RouterProvider router={router} />
-        </ThemeProvider>
-    </Provider>
+  <Provider store={store}>
+    <ThemeProvider theme={theme}>
+      <GlobalStyles />
+      <RouterProvider router={router} />
+    </ThemeProvider>
+  </Provider>
 );

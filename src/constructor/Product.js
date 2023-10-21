@@ -26,12 +26,12 @@ export const refineProduct = (xmlDoc) => {
     if (xmlDoc.ProductSearchResponse == null) {
         const product = xmlDoc.ProductInfoResponse.Product;
         return {
-            productId: product.ProductCode["#text"],
-            productImg: product.BasicImage["#cdata-section"],
+            productCode: product.ProductCode["#text"],
+            productImage: product.BasicImage["#cdata-section"],
             productName: product.ProductName["#cdata-section"],
             productPrice: product.ProductPrice.Price["#text"],
-            salePrice: product.ProductPrice.LowestPrice["#text"],
-            productUrl: `https://www.11st.co.kr/products/${product.ProductCode["#text"]}`
+            productSalePrice: product.ProductPrice.LowestPrice["#text"],
+            productUrl: `https://www.11st.co.kr/products/${product.ProductCode["#text"]}`,
         };
     } else {
         const products = xmlDoc.ProductSearchResponse.Products.Product;
