@@ -1,5 +1,3 @@
-import { GiftList } from "../pages/GiftTypeResult/styled";
-
 const giftList = [
   { id: 0, name: "에세이/시집", image: "에세이_시집" },
   { id: 1, name: "포토 앨범", image: "포토앨범" },
@@ -120,12 +118,10 @@ export const resultList = [
     gift: [
       giftList[8],
       giftList[9],
-      giftList[2],
       giftList[10],
       giftList[11],
       // "전자기기 (애플워치, 태블릿PC) ",
       // "빔프로젝트",
-      // "파자마",
       // "상품권",
       // "커피 머신",
     ],
@@ -139,12 +135,10 @@ export const resultList = [
     gift: [
       giftList[8],
       giftList[9],
-      giftList[2],
       giftList[10],
       giftList[11],
       // "전자기기 (애플워치, 태블릿PC) ",
       // "빔프로젝트",
-      // "파자마",
       // "상품권",
       // "커피 머신",
     ],
@@ -157,13 +151,11 @@ export const resultList = [
       "최신 전자기기 등 실용적이고, 현실적인 선물을 선호해요! 선물 자체를 부담스러워 하기도 하지만, 선물이 자신의 관심사와 일치한다면 굉장히 기뻐할 거예요! 만약 좋아하는 것을 파악하지 못했다면, 현금이나 상품권 같이 직접 사고 싶은 물건을 살 수 있는 선물을 주는 것이 좋아요! ",
     gift: [
       giftList[8],
-      GiftList[9],
-      giftList[2],
+      giftList[9],
       giftList[10],
       giftList[11],
       // "전자기기 (애플워치, 태블릿PC) ",
       // "빔프로젝트",
-      // "파자마",
       // "상품권",
       // "커피 머신",
     ],

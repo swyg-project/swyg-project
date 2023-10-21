@@ -1,36 +1,63 @@
-import { useSelector } from "react-redux";
 import shortenUrl from "../../utils/shortenUrl";
 import GiftList from "../../components/GiftList";
 import * as S from "./styled";
+import { useState } from "react";
+import BackHeader from "../../components/BackHeader";
 
 const GiftPick = () => {
-  const urlInfo = useSelector((state) => state.url.value);
-  //여기서는 productId만 url로 전송하면됨
-  const testProductId = 12345;
-  const originalUrl = `http://localhost:5173/last?productId=${testProductId}`;
+  const [finalList, setFinalList] = useState([]);
 
+  const urlParams = new URLSearchParams(window.location.search);
+  const urlInfo = Object.fromEntries(urlParams.entries());
+
+  const handleFinalListChange = (newList) => {
+    setFinalList(newList);
+  };
+
+  //사용자가 선택한 선물리스트
+  const jsonFinalList = JSON.stringify(finalList);
+  const originalUrl = `${import.meta.env.VITE_PUBLIC_URL}last?sender=${
+    urlInfo.sender
+  }&receiver=${urlInfo.receiver}productId=${jsonFinalList}`;
   async function handleBtn() {
-    try {
-      const newUrl = await shortenUrl(originalUrl);
-      console.log(newUrl);
-      // 복사 기능 실행
-      await navigator.clipboard.writeText(newUrl);
-      console.log("URL이 클립보드에 복사되었습니다.");
-    } catch (error) {
-      console.error("URL을 복사하는 중 오류가 발생했습니다.", error);
+    if (finalList.length > 0) {
+      try {
+        const newUrl = await shortenUrl(originalUrl);
+        // 복사 기능 실행
+        await navigator.clipboard.writeText(newUrl);
+        alert("링크가 복사되었습니다.");
+      } catch (error) {
+        console.error("URL을 복사하는 중 오류가 발생했습니다.", error);
+      }
+    } else {
+      alert("상품을 선택해주세요!");
     }
   }
 
   return (
     <S.Container>
-      <S.Letter>{urlInfo.letter}</S.Letter>
+      <BackHeader />
+      <S.LetterWrap>
+        <S.LetterPaper>
+          <S.LetterUnderlined>
+            <div className="letter">{urlInfo.letter} </div>
+          </S.LetterUnderlined>
+        </S.LetterPaper>
+      </S.LetterWrap>
       <S.ProductList>
         <div className="text">마음에 드는 선물을 골라주세요!</div>
         <S.ProductBox>
-          <GiftList></GiftList>
+          <GiftList
+            onFinalListChange={handleFinalListChange}
+            productIdList={urlInfo.productIdList}
+          ></GiftList>
         </S.ProductBox>
       </S.ProductList>
-      <S.Button onClick={handleBtn}>친구에게 고른 선물 알려주세요</S.Button>
+      <S.Button>
+        <button onClick={handleBtn} className="share-btn">
+          친구에게 고른 선물 알려주세요
+        </button>
+      </S.Button>
     </S.Container>
   );
 };
