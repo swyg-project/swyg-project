@@ -49,7 +49,7 @@ export const AnswerBtn = styled.div`
   border: 5px solid var(--pale-lavender-color);
   border-radius: 10px;
   opacity: 1;
-  mar &:hover {
+  &:hover {
     box-shadow: 0px 0px 6px var(--yellow-color);
     border: 5px solid var(--yellow-color);
     border-radius: 10px;
@@ -77,8 +77,9 @@ export const BackBtnWrap = styled.div`
 `;
 
 export const BackButton = styled.img`
-pointer
-
+  &:hover {
+    cursor: pointer;
+  }
 `;
 export const ForwardButton = styled.img`
   transform: scaleX(-1);

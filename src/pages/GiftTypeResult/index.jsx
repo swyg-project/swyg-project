@@ -50,7 +50,7 @@ function GiftTestResult() {
         </S.GiftList>
       </S.GiftBox>
       <S.ResultBtnContainer>
-        <button>선물 고르러 가기</button>
+        <button onClick={() => navigate("/")}>선물 고르러 가기</button>
         <button onClick={shareOriginBtn}>친구에게 결과 공유하기</button>
         <button onClick={() => navigate("/test")}>다시하기</button>
       </S.ResultBtnContainer>
