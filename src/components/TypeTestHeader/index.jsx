@@ -4,11 +4,14 @@ export const Container = styled.div`
   position: relative;
   display: flex;
   width: 100%;
+  justify-content: center;
 `;
 
 export const FixedWrapper = styled.div`
   position: sticky;
-  flex-grow: 1;
+  // flex-grow: 0.8;
+  width: 100%;
+  max-width: 600px;
   display: flex;
   align-items: center;
 `;
@@ -17,7 +20,7 @@ export const Logo = styled(Link)`
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-left: 12px;
+  // padding-left: 12px;
   cursor: pointer;
 `;
 

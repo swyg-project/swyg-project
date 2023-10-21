@@ -12,7 +12,7 @@ export const ProductBox = styled.div`
   display: flex;
   margin: 0;
   margin-bottom: 1.25rem;
-  width: 24.1rem;
+  width: 22rem;
   height: 6.9rem;
 
   background: #ffffff80 0% 0% no-repeat padding-box;
@@ -41,7 +41,7 @@ export const ProductImg = styled.img`
 
 export const NamePriceSpace = styled.div`
   display: flex;
-  width: 15rem;
+  width: 13.5rem;
   flex-direction: column;
   padding-left: 0.6rem;
   justify-content: center;

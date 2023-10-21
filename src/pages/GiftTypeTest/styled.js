@@ -63,18 +63,23 @@ export const AnswerBtn = styled.div`
 `;
 
 export const BackBtnWrap = styled.div`
+  // width: 70%;
   width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
   display: flex;
   justify-content: space-around;
   align-items: center;
   margin-bottom: 3rem;
 `;
 
-const BaseButton = styled.div`
-  overflow: hidden;
-  position: relative;
-  width: 3.6rem;
-  height: 4.3rem;
+export const BackButton = styled.img`
+pointer
+
+`;
+export const ForwardButton = styled.img`
+  transform: scaleX(-1);
+  opacity: 0.5;
 `;
 
 export const PageNumber = styled.div`
@@ -82,37 +87,4 @@ export const PageNumber = styled.div`
   letter-spacing: 0px;
   color: var(--navy-color);
   opacity: 1;
-`;
-
-export const StyledBackButton = styled(BaseButton)`
-  &:hover {
-    cursor: pointer;
-  }
-
-  &::after {
-    content: "";
-    position: absolute;
-    top: 1.5rem;
-    left: 2.9rem;
-    width: 1rem;
-    height: 1rem;
-    border-top: 4px solid var(--navy-color);
-    border-right: 4px solid var(--navy-color);
-    transform: rotate(225deg);
-  }
-`;
-
-export const StyledEmptyBox = styled(BaseButton)`
-  &::after {
-    content: "";
-    position: absolute;
-    top: 1.5rem;
-    left: -0.5rem;
-    width: 1rem;
-    height: 1rem;
-    border-top: 4px solid var(--navy-color);
-    border-right: 4px solid var(--navy-color);
-    transform: rotate(45deg);
-    opacity: 0.5;
-  }
 `;

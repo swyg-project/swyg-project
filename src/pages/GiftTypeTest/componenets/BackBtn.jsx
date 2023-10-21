@@ -1,6 +1,7 @@
 import { del } from "../../../redux/slices/scoreSlice";
 import { useDispatch, useSelector } from "react-redux";
 import * as S from "../styled";
+import backImage from "../../../assets/guide_arrow.svg";
 
 function BackBtn() {
   const pageNumber = useSelector((state) => state.score.page);
@@ -16,9 +17,9 @@ function BackBtn() {
 
   return (
     <S.BackBtnWrap>
-      <S.StyledBackButton onClick={handleBackBtn} />
+      <S.BackButton src={backImage} onClick={handleBackBtn} />
       <S.PageNumber>&#40;{pageNumber + 1}/12&#41; </S.PageNumber>
-      <S.StyledEmptyBox />
+      <S.ForwardButton src={backImage} />
     </S.BackBtnWrap>
   );
 }
