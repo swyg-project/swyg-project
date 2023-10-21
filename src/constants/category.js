@@ -13,6 +13,41 @@ export const categoryFilter = [
     "10만원이상",
 ]
 
+export const categoryImages = [
+    {
+        category: "여성",
+        image: "립스틱"
+    },
+    {
+        category: "남성",
+        image: "위스키"
+    },
+    {
+        category: "어린이",
+        image: "조립세트"
+    },
+    {
+        category: "부모님",
+        image: "여행티켓"
+    },
+    {
+        category: "기프티콘",
+        image: "기프티콘"
+    },
+    {
+        category: "5만원이하",
+        image: "상품권"
+    },
+    {
+        category: "10만원이하",
+        image: "블루투스스피커"
+    },
+    {
+        category: "10만원이상",
+        image: "전자기기"
+    },
+]
+
 
 // 카테고리 종류별 추천리스트
 export const suggestList = {

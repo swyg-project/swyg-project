@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { Provider } from "react-redux";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
 
 import GlobalStyles from "./style/global";
@@ -10,6 +10,7 @@ import { store } from "./redux/app/store";
 
 import App from "./App";
 import Home from "./pages/Home";
+import Header from "./components/Header/index";
 import Test from "./pages/GiftTypeTest";
 import GiftTypeResult from "./pages/GiftTypeResult";
 import GiftReceived from "./pages/GiftReceived";
@@ -30,25 +31,35 @@ const router = createBrowserRouter([
                 element: <Home />,
             },
             {
-                path: "/list",
+                element: (
+                    <>
+                        <Header />
+                        <Outlet />
+                    </>
+                ),
                 children: [
                     {
-                        index: true,
-                        element: <GiftListCreate />,
+                        path: "/list",
+                        children: [
+                            {
+                                index: true,
+                                element: <GiftListCreate />,
+                            },
+                            {
+                                path: ":category",
+                                element: <GiftListCreate />,
+                            },
+                        ],
                     },
                     {
-                        path: ":category",
-                        element: <GiftListCreate />,
+                        path: "/cart",
+                        element: <Cart />,
+                    },
+                    {
+                        path: "/letter",
+                        element: <Letter />,
                     },
                 ],
-            },
-            {
-                path: "/cart",
-                element: <Cart />,
-            },
-            {
-                path: "/letter",
-                element: <Letter />,
             },
         ],
     },

@@ -1,21 +1,24 @@
-import { Link } from "react-router-dom";
-
+import { useLocation } from "react-router";
+import { useParams } from "react-router-dom";
 import * as S from "./styled";
-import logoPng from "../../assets/요고어때_로고.png";
-import cartPng from "../../assets/장바구니.png";
+import guideArrowSVG from "../../assets/guide_arrow.svg";
+import cartSVG from "../../assets/cart.svg";
 
 const Header = () => {
+    const { pathname } = useLocation();
+    const {category} = useParams();
     return (
         <S.Container>
             <S.FixedWrapper>
-                <S.Logo to={"/"}>
-                    <img width="75" height="75" src={logoPng} />
-                </S.Logo>
-                <S.Options>
-                    <Link to={"/cart"}>
-                        <img width="50" height="50" src={cartPng} />
-                    </Link>
-                </S.Options>
+                <S.BackArrow to={-1}>
+                    <img src={guideArrowSVG} />
+                </S.BackArrow>
+                <S.CategoryTitle>{category || ""}</S.CategoryTitle>
+                {pathname !== "/cart" && pathname !== "/letter" && (
+                    <S.Cart to={"/cart"}>
+                        <img src={cartSVG} />
+                    </S.Cart>
+                )}
             </S.FixedWrapper>
         </S.Container>
     );

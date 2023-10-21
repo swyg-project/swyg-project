@@ -8,8 +8,9 @@ export const Container = styled.div`
 
 export const ScrollButton = styled.button`
     position: fixed;
-    bottom: 20px;
-    right: 20px;
+    bottom: 50px;
+    right: 50vh;
+    z-index: 9999;
     transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
     opacity: 0;
     visibility: hidden;

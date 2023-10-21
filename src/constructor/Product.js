@@ -2,7 +2,7 @@ export class Product {
     constructor(product) {
         if (product) {
             this.code = product.ProductCode["#text"];
-            this.image = product.ProductImage["#cdata-section"];
+            this.image = product.ProductImage300["#cdata-section"];
             this.name = product.ProductName["#cdata-section"];
             this.price = product.ProductPrice["#text"];
             this.salePrice = product.SalePrice["#text"];

@@ -13,19 +13,25 @@ function Cart() {
     const navigate = useNavigate();
 
     const handleOnConfirm = () => {
-        navigate("/letter")
-    }
+        navigate("/letter");
+    };
 
     return (
         <S.Container>
             {products.length > 0 ? (
                 <ProductLayout type={"list"} products={products} />
             ) : (
-                <div>아직 리스트에 선물이 추가되지 않았어요!</div>
+                <div className="alert-empty">
+                    <span>아직 선물을 고르지 않았어요!</span>
+                </div>
             )}
             <S.ButtonContainer>
-                <button type="button" onClick={() => navigate("/list")}>더 담으러 가기</button>
-                <button type="button" onClick={handleOnConfirm}>완료하기</button>
+                <button type="button" onClick={() => navigate("/list")}>
+                    <span>더 담으러 가기</span>
+                </button>
+                <button type="button" onClick={handleOnConfirm}>
+                    <span>완료하기</span>
+                </button>
             </S.ButtonContainer>
         </S.Container>
     );

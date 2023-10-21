@@ -54,18 +54,18 @@ const GiftListCreate = () => {
     return (
         <S.Container>
             <Categories />
-            {status === "loading" || !products ? (
-                <div>Loading...</div>
-            ) : (
-                <ProductLayout type={"grid"} products={products} />
-            )}
-
             <S.ScrollButton
                 onClick={scrollToTop}
                 className={showScrollButton ? "show-btn" : ""}
             >
                 Top
             </S.ScrollButton>
+            {status === "loading" || !products ? (
+                <div>Loading...</div>
+            ) : (
+                <ProductLayout type={"grid"} products={products} />
+            )}
+
         </S.Container>
     );
 };

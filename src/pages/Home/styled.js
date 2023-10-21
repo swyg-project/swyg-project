@@ -6,66 +6,108 @@ export const Container = styled.div`
     flex-direction: column;
     align-items: stretch;
     width: 100%;
-    
+
     height: calc(100% - var(--header-height));
     /* padding-top: var(--header-height); */
 `;
 
+// 배너
 export const Banner = styled.div`
-    margin: 5vw;
+    margin: 5vh 5vw;
     display: flex;
     flex-direction: column;
     align-items: stretch;
     justify-content: center;
 
-    .banner {
-        padding: 5vh 0px;
-
-        /* FIXME: 와이어 프레임 */
-        background-color: rgba(0, 0, 0, 0.3);
+    .banner-logo {
+        padding-top: 5vh;
         text-align: center;
-        font-size: 1.4rem;
-        font-weight: bold;
-        line-height: 1.6rem;
     }
 
     .banner-message {
         text-align: center;
-        padding: 5vh 0px;
+        padding-bottom: 5vh;
+        color: #ffffff;
 
-        /* FIXME: 와이어 프레임 */
-        font-size: 2rem;
-        font-weight: bold;
-        line-height: 2.2rem;
+        font-family: GmarketSansTTFMedium, sans-serif, Arial;
+        font-size: 25px;
     }
 `;
 
+// 선물 리스트, 유형 테스트
 export const Intersaction = styled.div`
     flex-grow: 1;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: 1fr;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 10vh;
+    gap: 3rem;
 `;
 
+// 링크 공유하기
 export const Share = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 5vh 0px;
 
-    /* FIXME: 와이어 프레임 */
     button {
-        padding: 6px 24px;
-        font-size: 1.2rem;
+        padding: 10px 3rem;
+
+        font-family: GmarketSansTTFLight, sans-serif, Arial;
+        font-size: 20px;
+        font-weight: bold;
+        font-style: normal;
+        text-align: center;
+        color: #484c99;
+
+        border: none;
+        border-bottom: 2px solid #9c76b0;
+        border-radius: 10px;
+
+        background: #ffffff;
+
+        user-select: none;
+        cursor: pointer;
+
+        &:hover {
+            filter: brightness(90%);
+        }
     }
 `;
 
 export const IntersactionLink = styled(Link)`
-    width: 100%;
-    height: 100%;
+    all: unset;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-size: 1.5rem;
-    border: 1px solid black;
+    border: none;
+
+    .intersction-btn {
+        text-decoration: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 1rem 2rem;
+
+        font-family: GmarketSansTTFMedium, sans-serif, Arial;
+        font-size: 17px;
+        color: #484c99;
+
+        border-color: #d9dbff;
+        border-width: 5px;
+        border-style: solid;
+        border-radius: 10px;
+
+        filter: drop-shadow(0px 0px 3px #d9dbff);
+
+        background: #ffffff;
+
+        user-select: none;
+    }
+
+    &:hover {
+        filter: brightness(90%);
+    }
+    cursor: pointer;
 `;
