@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 import backImage from "../../assets/guide_arrow.svg";
+import theme from "../../style/theme/index";
 
 export const Container = styled.div`
   position: relative;
@@ -14,8 +15,13 @@ export const FixedWrapper = styled.div`
   // flex-grow: 0.8;
   display: flex;
   width: 100%;
-  max-width: 600px;
+  margin: 0 auto;
+  max-width: 375px;
   align-items: center;
+
+  @media screen and ${theme.media.tablet} {
+    max-width: 600px;
+  }
 `;
 
 export const BackBtn = styled.img`

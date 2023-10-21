@@ -10,6 +10,7 @@ export const Container = styled.div`
   flex-direction: column;
   user-select: none;
 
+  overflow-y: auto;
   @media screen and ${theme.media.tablet} {
     font-size: 1.2rem;
   }
@@ -30,9 +31,12 @@ export const Question = styled.div`
   align-items: center;
   text-align: center;
   line-height: 1.4rem;
+  margin-bottom: 4rem;
 `;
 
-export const Answer = styled.div``;
+export const Answer = styled.div`
+  margin-bottom: 2rem;
+`;
 
 export const AnswerBtn = styled.div`
   margin: 0 auto 0.8rem;
@@ -45,8 +49,7 @@ export const AnswerBtn = styled.div`
   border: 5px solid var(--pale-lavender-color);
   border-radius: 10px;
   opacity: 1;
-
-  &:hover {
+  mar &:hover {
     box-shadow: 0px 0px 6px var(--yellow-color);
     border: 5px solid var(--yellow-color);
     border-radius: 10px;

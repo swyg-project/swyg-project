@@ -1,5 +1,5 @@
 import styled from "styled-components";
-
+import theme from "../../style/theme";
 export const Container = styled.div`
   position: relative;
   display: flex;
@@ -9,11 +9,15 @@ export const Container = styled.div`
 
 export const FixedWrapper = styled.div`
   position: sticky;
-  // flex-grow: 0.8;
-  width: 100%;
-  max-width: 600px;
   display: flex;
+  width: 100%;
+  margin: 0 auto;
+  max-width: 400px;
   align-items: center;
+
+  @media screen and ${theme.media.tablet} {
+    max-width: 600px;
+  }
 `;
 
 export const Logo = styled(Link)`
