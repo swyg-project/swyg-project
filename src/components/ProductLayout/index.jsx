@@ -4,7 +4,7 @@ import ProductCard from "../ProductCard";
 
 import * as S from "./styled";
 
-function ProductLayout({ type, products }) {
+function ProductLayout({ type, products, onClose }) {
     const observer = useRef();
 
     const loadMore = useCallback(
@@ -39,20 +39,23 @@ function ProductLayout({ type, products }) {
     }, []);
 
     return (
-        <S.Container $type={type}>
-            {productList.map((product, index) => (
-                <ProductCard
-                    key={product.code}
-                    ref={
-                        index === productList.length - 1
-                            ? lastProductElementRef
-                            : null
-                    }
-                    type={type}
-                    product={product}
-                />
-            ))}
-        </S.Container>
+        <S.ScrollOverflowHidden>
+            <S.Container $type={type}>
+                {productList.map((product, index) => (
+                    <ProductCard
+                        key={product.code}
+                        ref={
+                            index === productList.length - 1
+                                ? lastProductElementRef
+                                : null
+                        }
+                        type={type}
+                        product={product}
+                        onClose={onClose}
+                    />
+                ))}
+            </S.Container>
+        </S.ScrollOverflowHidden>
     );
 }
 

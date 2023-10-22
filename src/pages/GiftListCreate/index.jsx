@@ -6,6 +6,7 @@ import { selectProducts } from "../../redux/features/products/selectProducts";
 
 import Categories from "../../components/Categories";
 import ProductLayout from "../../components/ProductLayout";
+import LoadingSpinner from "../../components/LoadingSpinner"
 
 import * as S from "./styled";
 
@@ -61,7 +62,7 @@ const GiftListCreate = () => {
                 Top
             </S.ScrollButton>
             {status === "loading" || !products ? (
-                <div>Loading...</div>
+                <LoadingSpinner />
             ) : (
                 <ProductLayout type={"grid"} products={products} />
             )}

@@ -2,7 +2,6 @@ import logoImg from "../../assets/요고어때 로고.png";
 import giftListImg from "../../assets/요고어때 선물 리스트.png";
 import typeTestImg from "../../assets/요고어때 유형 테스트.png";
 import * as S from "./styled";
-import { useNavigate } from "react-router-dom";
 
 const Home = () => {
     const handleOnLinkShare = () => {

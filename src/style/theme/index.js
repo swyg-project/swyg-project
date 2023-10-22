@@ -14,7 +14,7 @@ const media = {
 
 const scroll = `
     &::-webkit-scrollbar {
-        width: 12px;
+        width: 0px;
     }
     &::-webkit-scrollbar-thumb {
         position: fixed;

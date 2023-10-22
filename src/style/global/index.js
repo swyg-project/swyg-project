@@ -54,7 +54,7 @@ const GlobalStyles = createGlobalStyle`
     
     #root {
         height: 100vh;
-        overflow: hidden;
+        overflow: auto;
         /* max-height: calc(100vh - var(--header-height)); */
         max-width: ${(props) => props.theme.size.tablet};
         align-self: stretch;

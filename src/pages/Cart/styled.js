@@ -32,6 +32,7 @@ export const ButtonContainer = styled.div`
     bottom: 10px;
     width: 100%;
     gap: 12px;
+    z-index: 10;
 
     button {
         display: flex;
@@ -66,6 +67,11 @@ export const ButtonContainer = styled.div`
         &:hover {
             filter: brightness(90%);
             cursor: pointer;
+        }
+
+        &:disabled {
+            filter: brightness(80%);
+            cursor: no-drop;
         }
     }
 `
