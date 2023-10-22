@@ -8,7 +8,7 @@ function GiftTestResult() {
   const navigate = useNavigate();
   const mbti = useParams().id;
 
-  //여기서는 mbti별 선물 추천 리스트 보여주기
+ 
   const showPresent = () => {
     const giftList = resultList.filter((item) => {
       return item.type === mbti;
@@ -50,7 +50,7 @@ function GiftTestResult() {
         </S.GiftList>
       </S.GiftBox>
       <S.ResultBtnContainer>
-        <button onClick={() => navigate("/")}>선물 고르러 가기</button>
+        <button onClick={() => navigate("/list")}>선물 고르러 가기</button>
         <button onClick={shareOriginBtn}>친구에게 결과 공유하기</button>
         <button onClick={() => navigate("/test")}>다시하기</button>
       </S.ResultBtnContainer>

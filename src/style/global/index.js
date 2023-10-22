@@ -1,7 +1,32 @@
 import { createGlobalStyle } from "styled-components";
 import reset from "styled-reset";
+import GmarketSansTTFBold from "../../fonts/GmarketSansTTFBold.ttf";
+import GmarketSansTTFMedium from "../../fonts/GmarketSansTTFMedium.ttf";
+import GmarketSansTTFLight from "../../fonts/GmarketSansTTFLight.ttf";
+
 const GlobalStyles = createGlobalStyle`
     ${reset}
+
+    @font-face {
+        font-family: 'GmarketSansTTFBold';
+        src: local('GmarketSansTTFBold'), local('GmarketSansTTFBold');
+        font-style: normal;
+        src: url(${GmarketSansTTFBold}) format('truetype');
+    }
+
+    @font-face {
+        font-family: 'GmarketSansTTFMedium';
+        src: local('GmarketSansTTFMedium'), local('GmarketSansTTFMedium');
+        font-style: normal;
+        src: url(${GmarketSansTTFMedium}) format('truetype');
+    }
+
+    @font-face {
+        font-family: 'GmarketSansTTFLight';
+        src: local('GmarketSansTTFLight'), local('GmarketSansTTFLight');
+        font-style: normal;
+        src: url(${GmarketSansTTFLight}) format('truetype');
+    }
 
     @font-face {
         font-family: 'GmarketSansMedium';
@@ -9,6 +34,30 @@ const GlobalStyles = createGlobalStyle`
         font-weight: normal;
         font-style: normal;
     }
+
+    /* body {
+        font-family: GmarketSansTTFLight, sans-serif, Arial;
+        background: linear-gradient(#9FAAFF, #DAAAFF);
+        font-family: 'GmarketSansMedium';
+        src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+    } */
+    
+    /* body {
+        height: 100vh;
+        font-family: 'GmarketSansMedium', sans-serif;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow-x: hidden;
+        background-attachment: fixed;
+        
+        background: transparent linear-gradient(180deg, var(--lightblue-color) 0%, var(--lavender-color) 100%) 0%
+        0% no-repeat padding-box;
+        
+    } */
     
     body {
         font-family: 'GmarketSansMedium', sans-serif;
@@ -18,7 +67,7 @@ const GlobalStyles = createGlobalStyle`
         justify-content: center;
         align-items: center;
         overflow-x: hidden;
-        
+
         background: transparent linear-gradient(180deg, var(--lightblue-color) 0%, var(--lavender-color) 100%) 0%
         0% no-repeat padding-box;
         background-attachment: fixed;
@@ -37,7 +86,7 @@ const GlobalStyles = createGlobalStyle`
     }
     
     :root {
-        --header-height: 75px;
+        --header-height: 50px;
         --white-primary: #FFFFFF;
         --black-primary: #000000;
 

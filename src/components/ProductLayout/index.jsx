@@ -4,7 +4,7 @@ import ProductCard from "../ProductCard";
 
 import * as S from "./styled";
 
-function ProductLayout({ type, products }) {
+function ProductLayout({ type, products, onClose }) {
     const observer = useRef();
 
     const loadMore = useCallback(
@@ -14,14 +14,11 @@ function ProductLayout({ type, products }) {
         [products]
     );
 
-    // productList state 초기화
     const [productList, setProductList] = useState([]);
 
     useEffect(() => {
-        // productList state 업데이트
         setProductList(loadMore(0, 10));
 
-        // Observer 초기화 (새로운 products 배열에 대한 관찰 시작)
         if (observer.current) observer.current.disconnect();
 
         observer.current = new IntersectionObserver((entries) => {
@@ -32,27 +29,30 @@ function ProductLayout({ type, products }) {
                 ]);
             }
         });
-    }, [products]); // products prop이 변경될 때마다 effect 실행
+    }, [products]);
 
     const lastProductElementRef = useCallback((node) => {
         if (node && observer.current) observer.current.observe(node);
     }, []);
 
     return (
-        <S.Container $type={type}>
-            {productList.map((product, index) => (
-                <ProductCard
-                    key={product.code}
-                    ref={
-                        index === productList.length - 1
-                            ? lastProductElementRef
-                            : null
-                    }
-                    type={type}
-                    product={product}
-                />
-            ))}
-        </S.Container>
+        <S.ScrollOverflowHidden>
+            <S.Container $type={type}>
+                {productList.map((product, index) => (
+                    <ProductCard
+                        key={product.code}
+                        ref={
+                            index === productList.length - 1
+                                ? lastProductElementRef
+                                : null
+                        }
+                        type={type}
+                        product={product}
+                        onClose={onClose}
+                    />
+                ))}
+            </S.Container>
+        </S.ScrollOverflowHidden>
     );
 }
 

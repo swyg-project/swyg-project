@@ -25,6 +25,6 @@ export const getProducts = async ({
 
         return result;
     } catch (err) {
-        console.log(err);
+        console.error(err);
     }
 };

@@ -2,9 +2,10 @@ import { getItem } from "../../utils/storage";
 import { CART } from "../../constants/cart";
 
 import * as S from "./styled";
+import shortenUrl from "../../utils/shortenUrl";
 
 const Letter = () => {
-    const handleOnSubmit = (e) => {
+    const handleOnSubmit = async (e) => {
         e.preventDefault();
 
         try {
@@ -14,17 +15,17 @@ const Letter = () => {
                 (product) => product.code
             );
 
-            formData.append("productCode", JSON.stringify(productCode));
+            formData.append("productIdList", JSON.stringify(productCode));
 
             const requestParameter = new URLSearchParams(formData).toString();
 
+            const result = await shortenUrl(import.meta.env.VITE_PUBLIC_URL + '/receiver?' + requestParameter);
+
             navigator.clipboard
-                .writeText(requestParameter)
+                .writeText(result)
                 .then(() =>
                     alert("url이 복사되었습니다! 친구에게 마음을 전달하세요!")
                 );
-
-            navigator.clipboard.readText().then((text) => console.log(text));
         } catch (err) {
             console.error(err);
         }
@@ -38,6 +39,7 @@ const Letter = () => {
                     name="receiver"
                     type="text"
                     placeholder="받는 사람 이름"
+                    required
                     autoFocus
                 />
                 <label htmlFor="sender-name">주는 사람은 누구인가요?</label>
@@ -45,10 +47,12 @@ const Letter = () => {
                     id="sender-name"
                     name="sender"
                     type="text"
+                    required
                     placeholder="주는 사람 이름"
                 />
                 <textarea
                     name="letter"
+                    required
                     placeholder="마음을 담은 편지를 써보세요!"
                 />
                 <div className="button-container">

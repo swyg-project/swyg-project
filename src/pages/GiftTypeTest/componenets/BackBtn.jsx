@@ -10,8 +10,6 @@ function BackBtn() {
   const handleBackBtn = () => {
     if (pageNumber > 0) {
       dispatch(del());
-    } else {
-      console.log("첫번째 문항입니다.");
     }
   };
 

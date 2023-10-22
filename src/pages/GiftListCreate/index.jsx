@@ -6,6 +6,7 @@ import { selectProducts } from "../../redux/features/products/selectProducts";
 
 import Categories from "../../components/Categories";
 import ProductLayout from "../../components/ProductLayout";
+import LoadingSpinner from "../../components/LoadingSpinner"
 
 import * as S from "./styled";
 
@@ -14,7 +15,7 @@ const GiftListCreate = () => {
     const dispatch = useDispatch();
     const [showScrollButton, setShowScrollButton] = useState(false);
 
-    // 스크롤 이벤트 디바운스
+   
     const debounceTimerRef = useRef(null);
 
     const scrollToTop = useCallback(() => {
@@ -54,18 +55,18 @@ const GiftListCreate = () => {
     return (
         <S.Container>
             <Categories />
-            {status === "loading" || !products ? (
-                <div>Loading...</div>
-            ) : (
-                <ProductLayout type={"grid"} products={products} />
-            )}
-
             <S.ScrollButton
                 onClick={scrollToTop}
                 className={showScrollButton ? "show-btn" : ""}
             >
                 Top
             </S.ScrollButton>
+            {status === "loading" || !products ? (
+                <LoadingSpinner />
+            ) : (
+                <ProductLayout type={"grid"} products={products} />
+            )}
+
         </S.Container>
     );
 };
