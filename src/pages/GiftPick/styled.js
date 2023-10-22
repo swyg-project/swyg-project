@@ -76,9 +76,8 @@ export const LetterPaper = styled.div`
 
 export const LetterWrap = styled.div`
   margin-top: 3rem;
-  
-}
 `;
+
 export const LetterUnderlined = styled.div`
   width: 80%;
   height: 100%;

@@ -4,17 +4,17 @@ export const Container = styled.div`
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: fit-content;
+    height: 100%;
     margin-top: 36px;
-    overflow-y: scroll;
+    overflow-y: auto;
 `;
 
 export const Form = styled.form`
+    position: relative;
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: fit-content;
-    flex-basis: 4;
+    height: 100%;
     align-items: center;
     gap: 24px;
 
@@ -47,7 +47,7 @@ export const Form = styled.form`
     }
     
     textarea {
-        display: flex;
+        display: inline-block;
         background-image: linear-gradient(
             to bottom,
             rgba(0, 0, 0, 0.2) 2px,
@@ -57,7 +57,7 @@ export const Form = styled.form`
         line-height: 2.5em;
 
         min-height: 40vh;
-        height: fit-content;
+        height: 50%;
         max-width: 70%;
         width: 80%;
         margin-top: 24px;
@@ -66,7 +66,6 @@ export const Form = styled.form`
         border: 5px solid #d9dbff;
         border-radius: 10px;
         align-self: center;
-        /* flex-grow: 0.5; */
         font-family: ${(props) => props.theme.font.gmarket.medium};
         font-size: 1.2rem;
         caret-color: #abaaff;

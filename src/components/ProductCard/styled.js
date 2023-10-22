@@ -72,7 +72,6 @@ export const ImageWrapper = styled.div`
                   flex-grow: 1;
               `
             : css`
-                  /* flex-grow: 1; */
                   border-top-right-radius: 0;
                   border-bottom-right-radius: 0;
                   width: 100px;
