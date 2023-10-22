@@ -17,7 +17,7 @@ const gridStyle = css`
 
 const flexStyle = css`
     width: 80%;
-    max-width: 700px;
+    max-width: 80vw;
     height: fit-content;
     flex-direction: row;
     border: 5px solid #d9dbff;
@@ -139,7 +139,7 @@ export const AddToCartBtn = styled.button`
         filter: ${(props) =>
             props.$isInCart
                 ? "drop-shadow(0 0 3px black)"
-                : "drop-shadow(0 0 3px red)"};
+                : "drop-shadow(0 0 3px black)"};
     }
 
     &:hover {

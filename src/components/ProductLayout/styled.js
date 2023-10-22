@@ -3,7 +3,7 @@ import styled, { css } from "styled-components";
 const gridStyle = css`
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    height: calc(100vh - var(--header-height) * 2);
+    height: calc(100vh - var(--header-height) * 5);
     grid-row-gap: 12px;
     grid-column-gap: 12px;
     justify-content: center;

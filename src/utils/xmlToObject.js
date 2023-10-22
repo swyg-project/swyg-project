@@ -1,7 +1,7 @@
 export function xmlToObject(xml) {
     let obj = {};
 
-    if (xml.nodeType === 1) { // element node
+    if (xml.nodeType === 1) {
         if (xml.attributes.length > 0) {
             obj["@attributes"] = {};
             for (let j = 0; j < xml.attributes.length; j++) {
@@ -9,7 +9,7 @@ export function xmlToObject(xml) {
                 obj["@attributes"][attribute.nodeName] = attribute.nodeValue;
             }
         }
-    } else if (xml.nodeType === 3 || xml.nodeType === 4) { // text node && cdata
+    } else if (xml.nodeType === 3 || xml.nodeType === 4) {
         return xml.nodeValue;
     }
 

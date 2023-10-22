@@ -66,7 +66,7 @@ export const AnswerBtn = styled.div`
 `;
 
 export const BackBtnWrap = styled.div`
-  // width: 70%;
+ 
   width: 100%;
   max-width: 600px;
   margin: 0 auto;

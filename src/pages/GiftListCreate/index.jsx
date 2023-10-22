@@ -15,7 +15,7 @@ const GiftListCreate = () => {
     const dispatch = useDispatch();
     const [showScrollButton, setShowScrollButton] = useState(false);
 
-    // 스크롤 이벤트 디바운스
+   
     const debounceTimerRef = useRef(null);
 
     const scrollToTop = useCallback(() => {

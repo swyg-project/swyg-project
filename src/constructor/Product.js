@@ -55,7 +55,6 @@ export const parseProductCode = (prod) => {
 
     try {
         products.forEach((product) => {
-            console.log(product);
             if (product instanceof Product) {
                 throw new Error(
                     "파싱하려는 대상이 Product의 인스턴스가 아닙니다"

@@ -28,14 +28,36 @@ const GlobalStyles = createGlobalStyle`
         src: url(${GmarketSansTTFLight}) format('truetype');
     }
 
-    body {
+    @font-face {
+        font-family: 'GmarketSansMedium';
+        src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    /* body {
         font-family: GmarketSansTTFLight, sans-serif, Arial;
         background: linear-gradient(#9FAAFF, #DAAAFF);
         font-family: 'GmarketSansMedium';
         src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
         font-weight: normal;
         font-style: normal;
-    }
+    } */
+    
+    /* body {
+        height: 100vh;
+        font-family: 'GmarketSansMedium', sans-serif;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow-x: hidden;
+        background-attachment: fixed;
+        
+        background: transparent linear-gradient(180deg, var(--lightblue-color) 0%, var(--lavender-color) 100%) 0%
+        0% no-repeat padding-box;
+        
+    } */
     
     body {
         font-family: 'GmarketSansMedium', sans-serif;
@@ -45,7 +67,7 @@ const GlobalStyles = createGlobalStyle`
         justify-content: center;
         align-items: center;
         overflow-x: hidden;
-        
+
         background: transparent linear-gradient(180deg, var(--lightblue-color) 0%, var(--lavender-color) 100%) 0%
         0% no-repeat padding-box;
         background-attachment: fixed;
@@ -53,9 +75,6 @@ const GlobalStyles = createGlobalStyle`
     }
     
     #root {
-        height: 100vh;
-        overflow: auto;
-        /* max-height: calc(100vh - var(--header-height)); */
         max-width: ${(props) => props.theme.size.tablet};
         align-self: stretch;
         flex-grow: 1;

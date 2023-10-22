@@ -14,14 +14,11 @@ function ProductLayout({ type, products, onClose }) {
         [products]
     );
 
-    // productList state 초기화
     const [productList, setProductList] = useState([]);
 
     useEffect(() => {
-        // productList state 업데이트
         setProductList(loadMore(0, 10));
 
-        // Observer 초기화 (새로운 products 배열에 대한 관찰 시작)
         if (observer.current) observer.current.disconnect();
 
         observer.current = new IntersectionObserver((entries) => {
@@ -32,7 +29,7 @@ function ProductLayout({ type, products, onClose }) {
                 ]);
             }
         });
-    }, [products]); // products prop이 변경될 때마다 effect 실행
+    }, [products]);
 
     const lastProductElementRef = useCallback((node) => {
         if (node && observer.current) observer.current.observe(node);

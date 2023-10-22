@@ -3,8 +3,6 @@ import { useEffect, useState, forwardRef } from "react";
 import { getItem, setItem } from "../../utils/storage";
 import { CART } from "../../constants/cart";
 
-import addComma from "../../utils/addComma";
-
 import heartPinkSVG from "../../assets/하트-선택.svg";
 import heartBlankSVG from "../../assets/빈_하트.svg";
 import closeSVG from "../../assets/닫기(x).svg";
@@ -93,9 +91,9 @@ const ProductCard = forwardRef(({ type, product, onClose }, ref) => {
                     />
                 )}
                 <p className="product__detail__title">{product.name}</p>
-                <span className="product__detail__price">{`${addComma(
-                    product.salePrice || product.price
-                )}`}</span>
+                <span className="product__detail__price">
+                    {product.salePrice || product.price}
+                </span>
             </S.Details>
         </S.Container>
     );

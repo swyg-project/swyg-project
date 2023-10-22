@@ -6,7 +6,7 @@ const CategoryButton = ({ category }) => {
         <S.CategoryLink to={`/list/${category}`}>
             <div className="img_container">
                 <img
-                    src={`${import.meta.env.VITE_PUBLIC_URL}images/gift/${
+                    src={`${import.meta.env.VITE_PUBLIC_URL}/images/gift/${
                         categoryImages.find((cat) => cat.category === category)
                             .image
                     }.jpg`}

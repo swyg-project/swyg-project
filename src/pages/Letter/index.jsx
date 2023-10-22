@@ -2,9 +2,10 @@ import { getItem } from "../../utils/storage";
 import { CART } from "../../constants/cart";
 
 import * as S from "./styled";
+import shortenUrl from "../../utils/shortenUrl";
 
 const Letter = () => {
-    const handleOnSubmit = (e) => {
+    const handleOnSubmit = async (e) => {
         e.preventDefault();
 
         try {
@@ -18,13 +19,13 @@ const Letter = () => {
 
             const requestParameter = new URLSearchParams(formData).toString();
 
+            const result = await shortenUrl(import.meta.env.VITE_PUBLIC_URL + '/receiver?' + requestParameter);
+
             navigator.clipboard
-                .writeText(import.meta.env.VITE_PUBLIC_URL + requestParameter)
+                .writeText(result)
                 .then(() =>
                     alert("url이 복사되었습니다! 친구에게 마음을 전달하세요!")
                 );
-
-            navigator.clipboard.readText().then((text) => console.log(text));
         } catch (err) {
             console.error(err);
         }

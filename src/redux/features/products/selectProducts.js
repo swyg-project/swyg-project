@@ -12,13 +12,13 @@ export const selectProducts = createSelector(
                 ? [...productsData[category]]
                 : [];
 
-        // code 값을 기준으로 중복 제거
+       
         const uniqueProducts = products.filter(
             (product, index, self) =>
                 index === self.findIndex((p) => p.code === product.code)
         );
 
-        // Fisher-Yates shuffle algorithm
+       
         for (let i = uniqueProducts.length - 1; i > 0; i--) {
             const j = Math.floor(Math.random() * i);
             const temp = uniqueProducts[i];

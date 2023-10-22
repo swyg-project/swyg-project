@@ -45,11 +45,11 @@ export const resultList = [
       giftList[2],
       giftList[3],
       giftList[4],
-      // "에세이/시집",
-      // "포토 앨범",
-      // "파자마",
-      // "수제청선물세트",
-      // "인테리어 소품(무드등, 캔들)",
+     
+     
+     
+     
+     
     ],
   },
 
@@ -64,11 +64,11 @@ export const resultList = [
       giftList[2],
       giftList[3],
       giftList[4],
-      // "에세이/시집",
-      // "포토 앨범",
-      // "파자마",
-      // "수제청선물세트",
-      // "인테리어 소품(무드등, 캔들)",
+     
+     
+     
+     
+     
     ],
   },
 
@@ -83,11 +83,11 @@ export const resultList = [
       giftList[0],
       giftList[6],
       giftList[7],
-      // "다이어리",
-      // "캔들 ",
-      // "에세이/시집",
-      // "향수",
-      // "DIY세트(펀치니들 세트, 조립식 장난감)",
+     
+     
+     
+     
+     
     ],
   },
 
@@ -102,11 +102,11 @@ export const resultList = [
       giftList[0],
       giftList[6],
       giftList[7],
-      // "다이어리",
-      // "캔들 ",
-      // "에세이/시집",
-      // "향수",
-      // "DIY세트(펀치니들 세트, 조립식 장난감)",
+     
+     
+     
+     
+     
     ],
   },
 
@@ -120,10 +120,10 @@ export const resultList = [
       giftList[9],
       giftList[10],
       giftList[11],
-      // "전자기기 (애플워치, 태블릿PC) ",
-      // "빔프로젝트",
-      // "상품권",
-      // "커피 머신",
+     
+     
+     
+     
     ],
   },
 
@@ -137,10 +137,10 @@ export const resultList = [
       giftList[9],
       giftList[10],
       giftList[11],
-      // "전자기기 (애플워치, 태블릿PC) ",
-      // "빔프로젝트",
-      // "상품권",
-      // "커피 머신",
+     
+     
+     
+     
     ],
   },
 
@@ -154,10 +154,10 @@ export const resultList = [
       giftList[9],
       giftList[10],
       giftList[11],
-      // "전자기기 (애플워치, 태블릿PC) ",
-      // "빔프로젝트",
-      // "상품권",
-      // "커피 머신",
+     
+     
+     
+     
     ],
   },
 
@@ -172,11 +172,11 @@ export const resultList = [
       giftList[13],
       giftList[14],
       giftList[15],
-      // "전자기기(애플워치, 태블릿PC)",
-      // "휴대폰 케이스",
-      // "지갑",
-      // "조립 세트(프라모델, 퍼즐 등)",
-      // "기프티콘",
+     
+     
+     
+     
+     
     ],
   },
 
@@ -191,11 +191,11 @@ export const resultList = [
       giftList[13],
       giftList[14],
       giftList[15],
-      // "전자기기(애플워치, 태블릿PC)",
-      // "휴대폰 케이스",
-      // "지갑",
-      // "조립 세트(프라모델, 퍼즐 등)",
-      // "기프티콘",
+     
+     
+     
+     
+     
     ],
   },
 
@@ -210,11 +210,11 @@ export const resultList = [
       giftList[13],
       giftList[14],
       giftList[15],
-      // "전자기기(애플워치, 태블릿PC)",
-      // "휴대폰 케이스",
-      // "지갑",
-      // "조립 세트(프라모델, 퍼즐 등)",
-      // "기프티콘",
+     
+     
+     
+     
+     
     ],
   },
 
@@ -229,11 +229,11 @@ export const resultList = [
       giftList[17],
       giftList[6],
       giftList[18],
-      // "폴라로이드 사진기 ",
-      // "핸드폰케이스",
-      // "베드테이블",
-      // "향수",
-      // "휴대폰 거치대",
+     
+     
+     
+     
+     
     ],
   },
 
@@ -248,11 +248,11 @@ export const resultList = [
       giftList[17],
       giftList[6],
       giftList[18],
-      // "폴라로이드 사진기 ",
-      // "핸드폰케이스",
-      // "베드테이블",
-      // "향수",
-      // "휴대폰 거치대",
+     
+     
+     
+     
+     
     ],
   },
 
@@ -268,7 +268,7 @@ export const resultList = [
       giftList[20],
       giftList[21],
 
-      // "위스키", "상품권", "지갑", "경기장 관람표", "여행 티켓"
+     
     ],
   },
 
@@ -284,7 +284,7 @@ export const resultList = [
       giftList[20],
       giftList[21],
 
-      // "위스키", "상품권", "지갑", "경기장 관람표", "여행 티켓"
+     
     ],
   },
 
@@ -299,7 +299,7 @@ export const resultList = [
       giftList[24],
       giftList[25],
       giftList[26],
-      // "옷", "주얼리", "블루투스 스피커", "기부 팔찌", "카드 지갑"
+     
     ],
   },
 
@@ -314,7 +314,7 @@ export const resultList = [
       giftList[24],
       giftList[25],
       giftList[26],
-      // "옷", "주얼리", "블루투스 스피커", "기부 팔찌", "카드 지갑"
+     
     ],
   },
 ];

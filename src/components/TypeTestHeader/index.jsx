@@ -24,7 +24,7 @@ export const Logo = styled(Link)`
   display: flex;
   justify-content: center;
   align-items: center;
-  // padding-left: 12px;
+ 
   cursor: pointer;
 `;
 

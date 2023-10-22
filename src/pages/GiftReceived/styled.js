@@ -1,11 +1,13 @@
 import styled from "styled-components";
 import theme from "../../style/theme";
+
 export const Container = styled.div`
   width: 100%;
-  hieght: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   font-size: 1.25rem;
   color: var(--white-primary);
   user-select: none;
@@ -32,7 +34,11 @@ export const Name = styled.div`
   text-align: center;
 `;
 export const GiftName = styled.div`
-  margin: 10rem auto 7rem;
+  /* margin: 10rem auto 7rem; */
+  margin-top: 3rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
 
   .receiver-box {
     margin-left: 1rem;
