@@ -1,28 +1,103 @@
 import { createGlobalStyle } from "styled-components";
 import reset from "styled-reset";
+import GmarketSansTTFBold from "../../fonts/GmarketSansTTFBold.ttf";
+import GmarketSansTTFMedium from "../../fonts/GmarketSansTTFMedium.ttf";
+import GmarketSansTTFLight from "../../fonts/GmarketSansTTFLight.ttf";
 
 const GlobalStyles = createGlobalStyle`
     ${reset}
 
-    body {
+    @font-face {
+        font-family: 'GmarketSansTTFBold';
+        src: local('GmarketSansTTFBold'), local('GmarketSansTTFBold');
+        font-style: normal;
+        src: url(${GmarketSansTTFBold}) format('truetype');
+    }
+
+    @font-face {
+        font-family: 'GmarketSansTTFMedium';
+        src: local('GmarketSansTTFMedium'), local('GmarketSansTTFMedium');
+        font-style: normal;
+        src: url(${GmarketSansTTFMedium}) format('truetype');
+    }
+
+    @font-face {
+        font-family: 'GmarketSansTTFLight';
+        src: local('GmarketSansTTFLight'), local('GmarketSansTTFLight');
+        font-style: normal;
+        src: url(${GmarketSansTTFLight}) format('truetype');
+    }
+
+    @font-face {
+        font-family: 'GmarketSansMedium';
+        src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    /* body {
+        font-family: GmarketSansTTFLight, sans-serif, Arial;
+        background: linear-gradient(#9FAAFF, #DAAAFF);
+        font-family: 'GmarketSansMedium';
+        src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+    } */
+    
+    /* body {
+        height: 100vh;
+        font-family: 'GmarketSansMedium', sans-serif;
+        position: relative;
         display: flex;
         justify-content: center;
         align-items: center;
+        overflow-x: hidden;
+        background-attachment: fixed;
+        
+        background: transparent linear-gradient(180deg, var(--lightblue-color) 0%, var(--lavender-color) 100%) 0%
+        0% no-repeat padding-box;
+        
+    } */
+    
+    body {
+        font-family: 'GmarketSansMedium', sans-serif;
+        position: relative;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow-x: hidden;
+
+        background: transparent linear-gradient(180deg, var(--lightblue-color) 0%, var(--lavender-color) 100%) 0%
+        0% no-repeat padding-box;
+        background-attachment: fixed;
+
     }
     
     #root {
-        max-width: ${props => props.theme.size.tablet};
+        max-width: ${(props) => props.theme.size.tablet};
+        align-self: stretch;
         flex-grow: 1;
     
-        @media ${props => props.theme.media.tablet} {
-            max-width: ${props => props.theme.size.laptop};
+        @media ${(props) => props.theme.media.tablet} {
+            max-width: ${(props) => props.theme.size.laptop};
         }
+
     }
     
     :root {
-        --white-primary: rgb(233,233,233);
-        --black-primary: rgb(34,34,34);
+        --header-height: 50px;
+        --white-primary: #FFFFFF;
+        --black-primary: #000000;
+
+        --lightblue-color: #9FAAFF;
+        --lavender-color: #DAAAFF;
+        --pale-lavender-color: #D9DBFF;
+        --yellow-color: #FFFF34;
+        --mauve-color: #9C76B0;
+        --navy-color:#484C99
+
     }
-`
+`;
 
 export default GlobalStyles;

@@ -1,3 +1,5 @@
+.env
+
 # Logs
 logs
 *.log
@@ -12,6 +14,7 @@ dist
 dist-ssr
 *.local
 
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
@@ -24,3 +27,6 @@ dist-ssr
 *.sw?
 
 /swyg-project
+
+# environment variables
+.env
