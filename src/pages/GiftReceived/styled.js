@@ -34,7 +34,6 @@ export const Name = styled.div`
   text-align: center;
 `;
 export const GiftName = styled.div`
-  /* margin: 10rem auto 7rem; */
   margin-top: 3rem;
   margin-bottom: 1.5rem;
   display: flex;

@@ -42,7 +42,6 @@ const BackHeader = () => {
         <Container>
             <FixedWrapper>
                 <BackBtn src={backImage} onClick={handleBtn}>
-                    {/* <div className="arrow"></div> */}
                 </BackBtn>
             </FixedWrapper>
         </Container>

@@ -40,7 +40,7 @@ export const TypeBox = styled.div`
 export const GiftBox = styled.div`
   .text {
     align-self: center;
-    margin-left: -16rem; /* 원하는 만큼 왼쪽으로 이동시킵니다. */
+    margin-left: -16rem;
     margin-bottom: 0.8rem;
     
     @media screen and ${theme.media.tablet} {

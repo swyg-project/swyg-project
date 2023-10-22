@@ -8,10 +8,8 @@ export const Container = styled.div`
     width: 100%;
 
     height: calc(100% - var(--header-height));
-    /* padding-top: var(--header-height); */
 `;
 
-// 배너
 export const Banner = styled.div`
     margin: 5vh 5vw;
     display: flex;
@@ -34,7 +32,6 @@ export const Banner = styled.div`
     }
 `;
 
-// 선물 리스트, 유형 테스트
 export const Intersaction = styled.div`
     flex-grow: 1;
     display: flex;
@@ -44,7 +41,6 @@ export const Intersaction = styled.div`
     gap: 3rem;
 `;
 
-// 링크 공유하기
 export const Share = styled.div`
     display: flex;
     justify-content: center;

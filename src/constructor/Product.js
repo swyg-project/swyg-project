@@ -68,7 +68,6 @@ export const parseProductCode = (prod) => {
     }
 };
 
-// 요청시 입력 데이터 검사
 export class RequestProduct {
     constructor({ product, sortCd, quantity, ...rest }) {
         if (

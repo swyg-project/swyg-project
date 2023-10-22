@@ -13,7 +13,6 @@ export const FixedWrapper = styled.div`
     flex-grow: 1;
     display: flex;
     align-items: center;
-    /* padding: 0px 25px; */
 `;
 
 export const BackArrow = styled(Link)`

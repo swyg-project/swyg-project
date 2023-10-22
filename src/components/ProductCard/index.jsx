@@ -9,7 +9,6 @@ import closeSVG from "../../assets/닫기(x).svg";
 
 import * as S from "./styled";
 
-// 상품 카드 타입: "grid", "list"
 const ProductCard = forwardRef(({ type, product, onClose }, ref) => {
     const [isInCart, setIsInCart] = useState(false);
 

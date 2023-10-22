@@ -1,4 +1,3 @@
-// 카테고리 종류
 export const categories = [
     "여성",
     "남성",
@@ -49,7 +48,6 @@ export const categoryImages = [
 ]
 
 
-// 카테고리 종류별 추천리스트
 export const suggestList = {
     "여성": [
         {
