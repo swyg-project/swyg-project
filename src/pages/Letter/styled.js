@@ -4,7 +4,7 @@ export const Container = styled.div`
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: 100%;
+    height: calc(100% - var(--header-height) * 2.5);
     margin-top: 36px;
     overflow-y: auto;
 `;
@@ -14,7 +14,7 @@ export const Form = styled.form`
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: 100%;
+    height: fit-content;
     align-items: center;
     gap: 24px;
 
@@ -57,7 +57,7 @@ export const Form = styled.form`
         line-height: 2.5em;
 
         min-height: 40vh;
-        height: 50%;
+        /* height: 50%; */
         max-width: 70%;
         width: 80%;
         margin-top: 24px;

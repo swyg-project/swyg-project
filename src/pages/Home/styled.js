@@ -38,7 +38,10 @@ export const Intersaction = styled.div`
     justify-content: center;
     align-items: center;
     padding-bottom: 10vh;
-    gap: 3rem;
+    
+    @media ${props => props.theme.media.tablet} {
+        gap: 3rem;
+    }
 `;
 
 export const Share = styled.div`
@@ -78,13 +81,14 @@ export const IntersactionLink = styled(Link)`
     justify-content: center;
     align-items: center;
     border: none;
+    padding: 0px 12px;
 
     .intersction-btn {
         text-decoration: none;
         display: flex;
         justify-content: center;
         align-items: center;
-        padding: 1rem 2rem;
+        padding: 1rem 1.5rem;
 
         font-family: GmarketSansTTFMedium, sans-serif, Arial;
         font-size: 17px;
@@ -100,6 +104,7 @@ export const IntersactionLink = styled(Link)`
         background: #ffffff;
 
         user-select: none;
+
     }
 
     &:hover {
