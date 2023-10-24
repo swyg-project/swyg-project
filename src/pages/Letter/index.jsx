@@ -1,3 +1,4 @@
+import { useRef, useEffect } from "react";
 import { getItem } from "../../utils/storage";
 import { CART } from "../../constants/cart";
 
@@ -5,6 +6,7 @@ import * as S from "./styled";
 import shortenUrl from "../../utils/shortenUrl";
 
 const Letter = () => {
+    const textareaRef = useRef(null);
     const handleOnSubmit = async (e) => {
         e.preventDefault();
 
@@ -19,7 +21,11 @@ const Letter = () => {
 
             const requestParameter = new URLSearchParams(formData).toString();
 
-            const result = await shortenUrl(import.meta.env.VITE_PUBLIC_URL + '/receiver?' + requestParameter);
+            const result = await shortenUrl(
+                import.meta.env.VITE_PUBLIC_URL +
+                    "/receiver?" +
+                    requestParameter
+            );
 
             navigator.clipboard
                 .writeText(result)
@@ -30,6 +36,12 @@ const Letter = () => {
             console.error(err);
         }
     };
+
+    const handleResizeHeight = () => {
+        textareaRef.current.style.height = "auto";
+        textareaRef.current.style.height = `${textareaRef.current.scrollHeight}px`;
+    };
+
     return (
         <S.Container>
             <S.Form onSubmit={handleOnSubmit}>
@@ -51,6 +63,9 @@ const Letter = () => {
                     placeholder="주는 사람 이름"
                 />
                 <textarea
+                    ref={textareaRef}
+                    onChange={handleResizeHeight}
+                    rows={1}
                     name="letter"
                     required
                     placeholder="마음을 담은 편지를 써보세요!"
