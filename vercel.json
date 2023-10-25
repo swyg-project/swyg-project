@@ -1,8 +1,14 @@
 {
-    "rewrites": [
-        {
-            "source": "/(.*)",
-            "destination": "/index.html"
-        }
-    ]
+  "routes": [
+    {
+      "source": "/11st(.*)",
+      "destination": "http://openapi.11st.co.kr/openapi/OpenApiService.tmall$1"
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
 }
