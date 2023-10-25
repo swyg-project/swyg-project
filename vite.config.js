@@ -10,10 +10,6 @@ export default defineConfig({
         rewrite: (path) => path.replace(/^\/11st/, ""),
         changeOrigin: true,
       },
-      "/openapi": {
-        target: `http://openapi.11st.co.kr`,
-        changeOrigin: true,
-      },
     },
   },
 });
