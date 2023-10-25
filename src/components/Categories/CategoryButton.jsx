@@ -3,7 +3,7 @@ import { categoryImages } from "../../constants/category";
 
 const CategoryButton = ({ category }) => {
     return (
-        <S.CategoryLink to={`/list/${category}`}>
+        <S.CategoryLink to={`/list/${category}`} replace>
             <div className="img_container">
                 <img
                     src={`${import.meta.env.VITE_PUBLIC_URL}/images/gift/${

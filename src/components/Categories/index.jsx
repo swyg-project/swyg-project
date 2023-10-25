@@ -1,6 +1,5 @@
 import { categories, categoryFilter } from "../../constants/category";
 import CategoryButton from "./CategoryButton";
-
 import * as S from "./styled";
 
 const Categories = () => {
