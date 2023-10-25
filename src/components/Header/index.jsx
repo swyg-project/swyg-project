@@ -6,11 +6,11 @@ import cartSVG from "../../assets/cart.svg";
 
 const Header = () => {
     const { pathname } = useLocation();
-    const {category} = useParams();
+    const { category } = useParams();
     return (
         <S.Container>
             <S.FixedWrapper>
-                <S.BackArrow to={-1}>
+                <S.BackArrow to={category ? "/list" : pathname === "/list" ? "/" : -1}>
                     <img src={guideArrowSVG} />
                 </S.BackArrow>
                 <S.CategoryTitle>{category || ""}</S.CategoryTitle>
