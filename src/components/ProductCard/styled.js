@@ -28,6 +28,7 @@ const flexStyle = css`
 `;
 
 export const Container = styled.div`
+    position: relative;
     display: flex;
     align-items: center;
     gap: 12px;
